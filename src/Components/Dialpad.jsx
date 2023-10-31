@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-function Dialpad({value,setValue,setSmValue}) {
+function Dialpad({value,setValue,setSmValue,dark}) {
     
     const handleButtonClick = (buttonValue) => {
         if (buttonValue === '%'){
@@ -34,13 +34,13 @@ function Dialpad({value,setValue,setSmValue}) {
     return (
         <div className='d-flex justify-content-center align-items-center'style={{flexDirection:'column'}} >
             <div className='d-flex'>
-                <button className='btn btn-primary' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}}  onClick={() => handleButtonClick('AC')} v>AC</button>
+                <button className={`btn ${dark?'btn-primary':''}`} style={{borderRadius:'0px',border:'1px solid black',width:'59px'}}  onClick={() => handleButtonClick('AC')} v>AC</button>
 
-                <button className='btn btn-primary'style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('CLR')}>CLR</button>
+                <button className={`btn ${dark?'btn-primary':''}`}style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('CLR')}>CLR</button>
 
-                <button className='btn btn-primary' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('%')}>%</button>
+                <button className={`btn ${dark?'btn-primary':''}`} style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('%')}>%</button>
 
-                <button className='btn btn-primary' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('/')} >÷</button>
+                <button className={`btn ${dark?'btn-primary':''}`} style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('/')} >÷</button>
             </div>
             <div className='d-flex'>
                 <button className='btn btn-secondary' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('7')}>7</button>
@@ -49,7 +49,7 @@ function Dialpad({value,setValue,setSmValue}) {
 
                 <button className='btn btn-secondary' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('9')}>9</button>
 
-                <button className='btn btn-primary' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}}
+                <button className={`btn ${dark?'btn-primary':''}`} style={{borderRadius:'0px',border:'1px solid black',width:'59px'}}
                 onClick={() => handleButtonClick('*')} >x</button>
             </div>
             <div className='d-flex'>
@@ -59,7 +59,7 @@ function Dialpad({value,setValue,setSmValue}) {
 
                 <button className='btn btn-secondary'style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('6')}>6</button>
 
-                <button className='btn btn-primary' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('-')}>-</button>
+                <button className={`btn ${dark?'btn-primary':''}`} style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('-')}>-</button>
             </div>
             <div className='d-flex'>
                 <button className='btn btn-secondary' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('1')}>1</button>
@@ -68,15 +68,16 @@ function Dialpad({value,setValue,setSmValue}) {
 
                 <button className='btn btn-secondary' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('3')}>3</button>
 
-                <button className='btn btn-primary' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('+')}>+</button>
+                <button className={`btn ${dark?'btn-primary':''}`} style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('+')}>+</button>
             </div>
             <div className='d-flex'>
                 <button className='btn' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('.')}>.</button>
                 <button className='btn' style={{borderRadius:'0px',border:'1px solid black',width:'59px'}} onClick={() => handleButtonClick('0')}>0</button>
-                <button className='btn btn-primary' style={{borderRadius:'0px',border:'1px solid black',width:'118px'}} onClick={() => handleButtonClick('=')}>=</button>
+                <button className={`btn ${dark?'btn-primary':''}`} style={{borderRadius:'0px',border:'1px solid black',width:'118px'}} onClick={() => handleButtonClick('=')}>=</button>
             </div>
         </div>
     )
 }
 
 export default Dialpad
+
